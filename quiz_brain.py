@@ -24,10 +24,4 @@ class QuizBrain:
         print("\n")
 
 
-# TODO: 1. Asking the question
 
-
-# TODO: 2. Checking if the answer was correct
-
-
-# TODO: 3. Checking if we're the end of the quiz
