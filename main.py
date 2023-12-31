@@ -2,13 +2,20 @@ from question_model import Question
 from data import question_data
 from quiz_brain import QuizBrain
 
-question_bank = []
 
-for question in question_data:
-    question_text = question["question"]
-    question_answer = question["correct_answer"]
-    new_question = Question(question_text, question_answer)
-    question_bank.append(new_question)
+def create_question_bank(data) -> list:
+    """Takes a list of dictionaries data and create and return a question object list"""
+    question_list = []
+    for question in data:
+        question_text = question["question"]
+        question_answer = question["correct_answer"]
+        new_question = Question(question_text, question_answer)
+        question_list.append(new_question)
+    return question_list
+
+
+question_bank = create_question_bank(data=question_data)
+
 
 quiz = QuizBrain(question_bank)
 
